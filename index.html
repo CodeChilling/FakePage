@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style type="text/css">
+        #global {
+            height: 680px;
+            width: 362px;
+            overflow-y: scroll;
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            min-height: 100%;
+            margin: auto;
+        }
+        
+        #mensajes {
+            height: auto;
+        }
+        
+        .ItemTitle {
+            grid-area: ItemTitle;
+            background-color: inherit;
+            font-family: 'Archivo Narrow', sans-serif;
+            color: #303132;
+            text-align: center;
+        }
+        
+        .ListDiv {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: ".";
+            grid-area: ListDiv;
+            background-color: inherit;
+            font-family: 'Archivo Narrow', sans-serif;
+            color: #363739;
+            text-align: center;
+        }
+        
+        .ListDiv:hover {
+            background-color: #E4E5EC;
+        }
+        
+        .ListDiv2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: ".";
+            grid-area: ListDiv;
+            background-color: #191A1F;
+            font-family: 'Archivo Narrow', sans-serif;
+            color: ivory;
+            text-align: center;
+            width: 1090px;
+            border-bottom: 1px solid #DADADC;
+        }
+        
+        .ListDiv3 {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: "Info1 Info1";
+            height: 250px;
+            border-bottom: 1px solid #DADADC;
+        }
+        
+        .ListDiv4 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: ".";
+            grid-area: ListDiv;
+            background-color: inherit;
+            font-family: 'Archivo Narrow', sans-serif;
+            color: #363739;
+            align-items: flex-start;
+        }
+        
+        .ListDiv5 {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: "Info1 Info1";
+            height: 250px;
+        }
+        
+        .ListDiv5:hover {
+            border: 1px solid #DADADC;
+        }
+        
+        .ListDiv6 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-area: ListDiv;
+            background-color: inherit;
+            font-family: 'Archivo Narrow', sans-serif;
+            align-items: flex-start;
+            border: 1px solid #DADADC;
+        }
+        
+        .ListDiv7 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: ".";
+            grid-area: ListDiv;
+            background-color: #F8F9FD;
+            font-family: 'Archivo Narrow', sans-serif;
+            color: #363739;
+            align-items: flex-start;
+        }
+        
+        .ListDiv8 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: "Image1 Image2 Image3";
+        }
+        
+        .Image1 {
+            grid-area: Image1;
+        }
+        
+        .Image2 {
+            grid-area: Image2;
+        }
+        
+        .Image3 {
+            grid-area: Image3;
+        }
+        
+        .titleText {
+            margin-left: 20px;
+            font-size: 48px;
+            color: ivory;
+        }
+        
+        .contentText {
+            margin-left: 20px;
+            font-size: 18px;
+            color: ivory;
+        }
+        
+        .Info1 {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: "IList1 IList2";
+            grid-area: Info1;
+            background-color: #191A1F;
+        }
+        
+        .Info2 {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            grid-template-rows: 1fr;
+            gap: 1px 1px;
+            grid-template-areas: "IList1 IList2";
+            grid-area: Info2;
+            background-color: #F8F9FD;
+        }
+        
+        .listUl1 {
+            list-style-type: none;
+            margin-top: 80px;
+        }
+        
+        .listUl2 {
+            list-style-type: none;
+            margin-top: 100px;
+        }
+        
+        .IList1 {
+            grid-area: IList1;
+        }
+        
+        .IList2 {
+            grid-area: IList2;
+        }
+        
+        .ItemEnd {
+            grid-area: ItemEnd;
+            background-color: inherit;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 0.5fr 1.5fr;
+            grid-template-rows: 0.05fr 1.8fr;
+            gap: 1px 1px;
+            grid-template-areas: "NavBar NavBar" "ScrollBar ContentBar";
+            background-color: #F8F9FD;
+        }
+        
+        .ContentBar {
+            grid-area: ContentBar;
+        }
+        
+        .NavBar {
+            display: grid;
+            grid-template-columns: 0.7fr 1fr 1.3fr;
+            grid-template-rows: 1.1fr 0.9fr;
+            gap: 1px 1px;
+            grid-template-areas: "SIteLogo . NavItems" "SIteLogo . NavItems";
+            grid-area: NavBar;
+            background-color: #191A1F;
+            border-bottom-color: #111214;
+        }
+        
+        .endBar {
+            display: grid;
+            grid-template-columns: 0.7fr 1fr 1.3fr;
+            grid-template-rows: 1.1fr 0.9fr;
+            gap: 1px 1px;
+            grid-template-areas: "SIteLogo . NavItems" "SIteLogo . NavItems";
+            grid-area: NavBar;
+            background-color: #F8F9FD;
+            border-bottom-color: #111214;
+        }
+        
+        .SIteLogo {
+            grid-area: SIteLogo;
+            display: flex;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .NavItems {
+            grid-area: NavItems;
+            display: flex;
+            justify-content: center;
+            font-family: 'Pragati Narrow', sans-serif;
+        }
+        
+        .ScrollBar {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 1px 1px;
+            grid-template-areas: "Part1 Part1 Part1" "Part2 Part2 Part2" "Part3 Part3 Part3";
+            grid-area: ScrollBar;
+        }
+        
+        .Part1 {
+            grid-area: Part1;
+            background-color: #F8F9FD;
+            border-bottom: 1px solid #DADADC;
+        }
+        
+        .Part2 {
+            grid-area: Part2;
+            background-color: #F8F9FD;
+            border-bottom: 1px solid #DADADC;
+        }
+        
+        .Part3 {
+            grid-area: Part3;
+            background-color: #F8F9FD;
+            border-bottom: 1px solid #DADADC;
+        }
+        
+        .titleDiv {
+            border-bottom-color: ivory;
+            background-color: #191A1F;
+            float: left;
+        }
+        
+        .boton_titulo {
+            text-decoration: none;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 15px;
+            color: #ffffff;
+            background-color: #191A1F;
+            border-radius: 6px;
+            border: 2px solid #191A1F;
+        }
+        
+        .boton_navitems {
+            text-decoration: none;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #191A1F 3;
+            border-radius: 6px;
+            border: 2px solid #191A1F;
+        }
+        
+        .boton_navitems:hover {
+            color: #9699AF;
+        }
+        
+        .logo_titulo {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+    <div class="grid-container">
+        <div class="NavBar">
+            <div class="SIteLogo">
+                <img class="logo_titulo" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Material_Design_Logo.svg" width="30" height="30">
+                <a class="boton_titulo"> MATERIAL DESIGN</a>
+            </div>
+            <div class="NavItems">
+                <a class="boton_navitems">Design</a>
+                <a class="boton_navitems">Components</a>
+                <a class="boton_navitems">Develop</a>
+                <a class="boton_navitems">Resources</a>
+                <img class="logo_titulo" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b982ee3e-dfdc-45ad-b397-db5751bc47df/d513euc-c6cb8662-9463-4ba4-982d-a94eb7bfc8f9.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYjk4MmVlM2UtZGZkYy00NWFkLWIzOTctZGI1NzUxYmM0N2RmXC9kNTEzZXVjLWM2Y2I4NjYyLTk0NjMtNGJhNC05ODJkLWE5NGViN2JmYzhmOS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.SFgnRf9VLGi_aO-z4uN56ZTWt8tCpT0hWQaaSAQigRw"
+                    width="30" height="30">
+            </div>
+
+        </div>
+        <div class="ScrollBar">
+            <div id="global">
+                <div id="mensajes">
+                    <div class="Part1">
+                        <div>
+                            <div class="ItemTitle">
+                                <h4>Material System</h4>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Introduction</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Material Studies</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Part2">
+                        <div>
+                            <div class="ItemTitle">
+                                <h4>Material Foundation</h4>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Foundation Overview</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Environment</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Layout</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Navigation</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Color</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Typography</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Sound</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Iconography</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Shape</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Motion</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Interaction</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Communication</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Part3">
+                        <div>
+                            <div class="ItemTitle">
+                                <h4>Material Guidelines</h4>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Guidelines Overview</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Material Theming</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Usability</p>
+                            </div>
+                            <div class="ListDiv">
+                                <p>Platform Guiance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="ContentBar">
+            <div class="ListDiv2">
+                <h4>Google is committed to advancing racial equity for Black communities. See how.</h4>
+
+            </div>
+            <div class="ListDiv3">
+                <div class="Info1">
+                    <div class="IList1">
+                        <div class="ListDiv4">
+                            <ul class="listUl1 ">
+                                <li class="titleText">Design</li>
+                                <li class="contentText">Create intuitive and beautiful products with Material Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="IList2">
+                        <div class="IList1">
+                            <div class="ListDiv4">
+
+                                <ul class="listUl1 ">
+
+                                    <li class="contentText">POPULAR</li>
+                                    <li class="contentText">Material Theming</li>
+                                    <li class="contentText">Iconography</li>
+                                    <li class="contentText">Text fields</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="ListDiv5">
+                <div class="Info1">
+                    <div class="IList1">
+                        <div class="ListDiv6" style="margin-left: 20px; margin-right: 20;">
+                            <img src="https://lh3.googleusercontent.com/DAeLGsE71e2dNbcIr51s4ZGr-Z_CnrhW-wa50u8H2vO_jJ6zYovMU-RIR7bgKYz4Q3ru_L5qmp6rHfThDj9mktyZvGwTM6i3LA5dAg=w760-h360" width="560" height="300">
+                        </div>
+                    </div>
+                    <div class="IList2">
+                        <div class="IList1">
+                            <div class="ListDiv6" style="margin-left: 20px; margin-right: 20;">
+                                <img src="https://lh3.googleusercontent.com/hlscbmKQ0euOh4b0S2AoBPlLTLakIS5SOF4Y6Wg1x3DfwmsD_m6SpZoi_qlGqkyh3a73ZPYwLbqCxghVGZp7QNboHzyH1ujMpa7I_w=w760-h760" width="445" height="300">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ListDiv3">
+                <div class="Info1">
+                    <div class="IList1">
+                        <div class="ListDiv4">
+                            <ul class="listUl1 ">
+                                <li class="titleText">Foundation</li>
+                                <li class="contentText">Material Dark Theme</li>
+                                <li class="contentText">Learn how to design a dark theme version of your material UI</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="IList2">
+                        <div class="IList1">
+                            <div class="ListDiv4">
+
+                                <ul class="listUl1 ">
+                                    <li class="contentText">GUIDELINES</li>
+                                    <li class="contentText">Material guidelines</li>
+                                    <li class="contentText">Use sound to communicate information in ways that argument the user experience</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="ListDiv3">
+                <div class="Info1" style="background-color: whitesmoke;" style="border-bottom: grey;">
+                    <div class="IList1" style="background-color: whitesmoke;">
+                        <div class="ListDiv4" style="background-color: whitesmoke;">
+                            <ul class="listUl1 ">
+                                <li class="titleText" style="color: black;">What's new</li>
+                                <li class="contentText" style="color: black;">The latest Material Design updates and guidance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="IList2" style="background-color: whitesmoke;">
+                        <div class="IList1" style="background-color: whitesmoke;">
+                            <div class="ListDiv4">
+
+                                <ul class="listUl1 ">
+
+                                    <li class="contentText" style="color: black;">JUNE 15, 2020 Submissions open for 2020 MDAs Nominate your product for a Material Design Award</li>
+                                    <li class="contentText" style="color: black;">MARCH 19, 2020 View prototypes in Gallery New feature supports uploading and viewing prototypes created in Sketch</li>
+                                    <li class="contentText" style="color: black;">Esto es otro punto de la misma lista</li>
+                                    <li class="contentText" style="color: black;">MARCH 19, 2020 Gallery Plugin New name for the Material Plugin, which lets you upload files from Sketch directly to Gallery</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="IList1" style="background-color: whitesmoke; margin-bottom: 5px;">
+                <div class="ListDiv4" style="background-color: whitesmoke;">
+                    <ul class="listUl1 ">
+                        <li class="titleText" style="color: black;">Material articles</li>
+                        <li class="contentText" style="color: black;">Make progress faster, with these helpful articles</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ListDiv5" style="margin-bottom: 5px;">
+                <div class="Info1" style="background-color: whitesmoke; border-bottom: grey; margin-bottom: 5px;">
+
+                    <div class="IList1">
+
+                        <div class="ListDiv6" style="margin-left: 20px; margin-right: 20;">
+
+                            <img src="https://lh3.googleusercontent.com/8y8ldGyd985hBuWCcjApLYrof4VG4p_51i2wcsSj6F28DrMoH8oUeHx8nYhSQnzpF7ZSxC310ED3I8DcJC5hJw6vliZz9EUJtK-_=w760-h360" width="560" height="300">
+                        </div>
+                    </div>
+                    <div class="IList2">
+                        <div class="IList1">
+                            <div class="ListDiv6" style="margin-left: 20px; margin-right: 20;">
+                                <img src="https://lh3.googleusercontent.com/43xl-we-m11AHosMZ0Dx0tjw9yRzz7QqxhLKpJPBCcV3r1wUPHuyC7cguQbMH8BKvP0Zi2VQtquWwm03jWBrMjDcieq9wwupyFCf2JA=w760-h760" width="445" height="300">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ListDiv3" style="margin-bottom: 20px;">
+                <div class="Info1" style="background-color: whitesmoke;" style="border-bottom: grey;">
+                    <div class="IList1">
+                        <div class="ListDiv4">
+                            <ul class="listUl1 ">
+                                <li class="titleText" style="color: black;">System Icons</li>
+                                <li class="contentText" style="color: black;">System icons symbolize common actions, files, devices and directories. Each icon is reduced to it's minimal form, expressing essential characteristics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="IList2">
+                        <div class="IList1">
+                            <div class="ListDiv4">
+
+                                <ul class="listUl1 ">
+                                    <li class="titleText" style="color: black;">Generate custom colors</li>
+                                    <li class="contentText" style="color: black;">Craft a unique color scheme for your brand with this online tool</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="ListDiv5">
+                <div class="Info1" style="background-color: whitesmoke;" style="border-bottom: grey;">
+
+                    <div class="IList1">
+
+                        <div class="ListDiv6" style="margin-left: 20px; margin-right: 20;">
+
+                            <img src="https://lh3.googleusercontent.com/AdpQO8St2UDepak3nzC-48zMsBCWJqh55lTZIbpm2ELe0-7B_wq6SJIiBLytYfZK-jkR5048HAZsMJbpvUx040JoTdr0pgaRNehg8Q=w760-h360" width="560" height="300">
+                        </div>
+                    </div>
+                    <div class="IList2">
+                        <div class="IList1">
+                            <div class="ListDiv6" style="margin-left: 20px; margin-right: 20;">
+                                <img src="https://lh3.googleusercontent.com/cdDr6-7gaOZawSLhMZxDuz6dFP0LWuclsvgdLldEne-27pEg4NJqkzzRl51nNqBFriXY2GUVQPb2MMrnpm1irDpKQ0CKJYvW9JNP4Q=w760-h760" width="445" height="300">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ListDiv3" style="margin-bottom: 50px;">
+                <div class="Info1" style="background-color: whitesmoke; border-bottom: grey;">
+                    <div class="IList1">
+                        <div class="ListDiv4">
+                            <ul class="listUl1 ">
+                                <li class="titleText" style="color: black;">The tape system</li>
+                                <li class="contentText" style="color: black;">Use typography to present your design and content as clearly and efficently as possible </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="IList2">
+                        <div class="IList1">
+                            <div class="ListDiv4">
+
+                                <ul class="listUl1 ">
+                                    <li class="titleText" style="color: black;">Harness the power of shape</li>
+                                    <li class="contentText" style="color: black;">Shapes can direct attention, identify components, communicate state and express brand</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="IList1" style="background-color: whitesmoke; margin-bottom: 10px;">
+                <div class="ListDiv4" style="background-color: whitesmoke;">
+                    <ul class="listUl1 ">
+                        <li class="titleText" style="color: black;">Learn more</li>
+                        <li class="contentText" style="color: black;">Browse our favorite Material videos, articles, and tutorials</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ListDiv5" style="margin-bottom: 500px;">
+                <div class="ListDiv8">
+                    <div class="Image1">
+                        <img src="https://lh3.googleusercontent.com/yY9T41C33HMSN4PyxxslPDXk16BzHcl7DWFSJerAigHlL5uKR0FXFoKnPuIv-fhiCVwJ99keGjPe0aUrjVwPL7bAv7UlkEtn_vDNrQ=w760-h380" width="363" height="300">
+                        <div class="IList1">
+                            <div class="ListDiv4">
+                                <ul class="listUl1 ">
+                                    <li class="contentText" style="color: black;">YOUTUBE</li>
+                                    <li class="titleText" style="color: black;">Make a dark theme</li>
+                                    <li class="contentText" style="color: black;">Learn how to craft a dark Material theme to complement your app's light theme</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Image2">
+                        <img src="https://lh3.googleusercontent.com/UFo6L2eRom5nFirQBP9Ze6cxQHloJw7YjuKFB75DwVzA-aG-ly7PhmQV70RGDrF6ouQWE1qDqi60HKTrS1f_uXIKYtaMpGkynUKJKg=w760-h378" width="363" height="300">
+                        <div class="IList1">
+                            <div class="ListDiv4">
+                                <ul class="listUl1 ">
+                                    <li class="contentText" style="color: black;">GOOGLE</li>
+                                    <li class="titleText" style="color: black;">Open call for MDA submissions</li>
+                                    <li class="contentText" style="color: black;">Nominate your product for the 2020 Material Design Awards, celebrating the best work from Material's talented Community</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Image3">
+                        <img src="https://lh3.googleusercontent.com/V4O28unhjagHRnwx2ozs58jIJwb-huHQ3WD_XwFm6m3OoV0XYrlrBLMkOrtO46jbNDGg9O5X55vtKn_wSp0Pf7dZEW3pr3VMOhYO=w760-h381" width="363" height="300">
+                        <div class="IList1">
+                            <div class="ListDiv4">
+                                <ul class="listUl1 ">
+                                    <li class="contentText" style="color: black;">MEDIUM</li>
+                                    <li class="titleText" style="color: black;">How to find device metrics</li>
+                                    <li class="contentText" style="color: black;">Learn to calculate the right measurements for design on any device</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="ListDiv3">
+                <div class="Info1" style="background-color: whitesmoke;" style="border-bottom: grey;">
+                    <div class="IList1" style="background-color: whitesmoke;">
+
+
+                        <div class="ListDiv4" style="background-color: whitesmoke;">
+
+                            <ul class="listUl1 ">
+
+                                <li class="titleText" style="color: black;"><img src="https://storage.googleapis.com/spec-host/mio-staging/mio-collections/1584058305895/static/m2/images/loader.svg" width="50" height="50"></li>
+                                <li class="contentText" style="color: black;">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers,
+                                    and helps teams quickly build beautiful products.</li>
+                                <li class="contentText" style="color: black; margin-top: 40px;">GitHub / Twitter / YouTube / Suscribe for updates</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="ListDiv3">
+                <div class="Info1" style="background-color: whitesmoke;" style="border-bottom: grey;">
+                    <div class="IList1" style="background-color: whitesmoke;">
+
+
+                        <div class="ListDiv4" style="background-color: whitesmoke;">
+
+                            <ul class="listUl1 ">
+
+                                <li class="titleText" style="color: black;"><img src="https://w7.pngwing.com/pngs/830/700/png-transparent-web-summit-google-logo-google-doodle-google-analytics-google-company-text-trademark.png" width="50" height="50"></li>
+
+                                <li class="contentText" style="color: black; margin-top: 40px;">GitHub / Twitter / YouTube / Suscribe for updates</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
